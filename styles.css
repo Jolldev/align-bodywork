@@ -1,0 +1,1032 @@
+:root {
+  --section-padding: 10% 2%;
+  --section-margin: 15% 0;
+  --serif-font: 'EB Garamond', serif;
+  --sans-serif: 'Open Sans', sans-serif;
+  --cursive-font: 'Dancing Script', cursive;
+  --handwriting-font: 'The Girl Next Door', cursive;;
+  --cursive-heading: #BACFE6;
+  --light-font: rgb(240, 238, 238);
+  --dark-font: black;
+  /* --dark-not-box-bg: rgb(18, 20, 22); */
+  --light-box-bg: rgb(190, 180, 150);
+  --dark-box-bg: rgb(65, 70, 75);
+  --dark-not-box-bg:rgb(26, 29, 32);
+  --bg-glow: 0 0 20px #996f35, 0 0 15px #996f35, 0 0 10px #996f35;
+}
+
+/* Makes position: absolute bottom:(footer height) keep footer at bottom of all pages */
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Full site marble background image */
+.marble-bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 120vh;
+  z-index: -1;
+}
+
+.light-box{
+    background-color: var(--light-box-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(39, 35, 20);
+    color: var(--dark-font);
+    padding: var(--section-padding);
+    margin: var(--section-margin);
+}
+
+.dark-box{
+    background-color: var(--dark-box-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(31, 30, 30);
+    color: var(--light-font);
+    padding: var(--section-padding);
+    margin: var(--section-margin);
+}
+
+.btn:hover{
+   transform: scale(.98);
+}
+
+.bg-glow:hover{
+    text-decoration: none;
+    text-shadow: var(--bg-glow);
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+ul, ol{
+    padding-inline-start: 20px;
+}
+
+/* Main page fonts (Treatment options summary, infrared sauna description, contact section) */
+.main-page-font{
+   font-family: var(--serif-font);
+   font-size: 1.3rem;
+   font-weight: 400;
+   line-height: 1.2;
+   text-align: justify;
+}
+
+/* Hyphens selected long words to allow the use of text-align: justified; */
+.hyphenate{
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+}
+
+/* logo top of page*/
+.brand-logo{
+    animation-name: glow-in-out;
+    animation-duration: 4.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 50%;
+    margin: 15px 0 5px;
+    height:170px;
+    transition: .5s;
+}
+
+@keyframes glow-in-out{
+    0%{
+        text-shadow: none;
+        
+    }
+
+    50%{
+        box-shadow: 0 0 30px #996f35, 0 0 50px #996f35;
+    }
+
+      0%{
+        text-shadow: none;
+        
+    }
+}
+
+.brand-logo:hover{
+    box-shadow: var(--bg-glow);
+}
+
+/* Navbar on main page */
+.navbar{
+    background-color: transparent;
+ }
+
+ /* Only shows "Services" in navbar on landscape screen */
+ .landscape-service-link{
+     display: none;
+}
+
+#navbarNavDropdown .nav-item .current-page{
+color: rgb(105, 105, 105);
+}
+
+#nav .nav-link{
+    color: var(--dark-font);
+    display: inline-block;
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    padding: 10px 0;
+    text-align: right;
+    transition: .5s;
+} 
+
+/* aligns anchor tags in the nav to right side in toggler dropdown */
+.nav-item{
+    text-align: right;
+}
+
+/* hamburger button modifications*/
+.custom-toggler.navbar-toggler { 
+    border: 1px;
+    border-color: rgba(0, 0, 0, 0.6); 
+    position: relative;
+} 
+
+button.navbar-toggler{
+    opacity: .7;
+    outline: none;
+    transition: .5s;
+}
+
+button.navbar-toggler:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.custom-toggler .navbar-toggler-icon { 
+    background-image: url( 
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, .8)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+        } 
+
+#navbarNavDropdown{
+    transition: .8s;
+}
+
+/* Carousel */
+#carouselMain .carousel-control-prev-icon,#carouselMain .carousel-control-next-icon{
+    display: none;
+}
+
+/* modifies carousel indicators */
+.carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    width: .6rem;
+    height: .6rem;
+    margin: 0 15px;
+}
+
+
+/* Image options dependent on screen size within carousel */
+.landscape-slide-container, .landscape-slide-img, .landscape-caption-stones{
+    display: none;
+}
+
+.portrait-slide-container{
+    width: 100%;
+}
+
+.portrait-slide-img{
+    /* object-fit: contain; */
+    width: 100%;
+    position: relative;
+}
+
+/* slides with textbox */
+.carousel-textbox-dark{
+    background-color: rgb(25, 27, 27);
+    color: var(--light-font);
+    position: relative;
+}
+
+.carousel-textbox-light{
+    background-color: var(--dark-box-bg);
+    color: var(--light-font);
+}
+
+/* Massage room slide (slide #1) */
+/* .carousel-1-text{
+display: none;
+} */
+
+.carousel-1-text{
+
+color: var(--dark-font) !important;
+display: block;
+font-size: 3.5vw;
+font-weight: 500;
+font-family: var(--serif-font);
+letter-spacing: .6px;
+position: absolute;
+text-shadow: 0 0 5px #a57817, 0 0 15px #996f35, 0 0 30px #daa04f, 0 0 10px #f5e1c5, 0 0 30px #daa04f;
+top: 37%;
+white-space: nowrap;
+width: 100%;
+}
+
+
+/* Stones slide (slide 2) */
+
+.slide-caption{
+    font-family: var(--serif-font);
+    font-size: 3.2vw;
+    line-height: 1.3;
+    width: 75%;
+}
+
+
+/* Treatment options & Infrared Sauna sections on main page*/
+.massage-therapy-text-container{
+   display: flex;
+   font-family: var(--serif-font);
+   flex-direction: column;
+   justify-items: center;
+}
+
+.massage-therapy-heading{
+    font-family: var(--cursive-font);
+    font-size: 3.5rem;
+}
+
+.treatment-label{
+    font-size: 1.6rem;   
+    margin-bottom: .8rem;
+    text-align: center;
+}
+
+.infrared-heading-main{
+   font-family: var(--cursive-font);
+   font-size: 2.7rem;
+}
+
+.infrared-subheading-main{
+    color: rgb(253, 227, 192);
+    font-family: var(--sans-serif);
+    font-size: 1.1rem;
+}
+
+.allouez-only{
+    color: rgb(214, 205, 177);
+    font-family: var(--sans-serif);
+    font-size: .9rem;
+}
+
+.infrared-benefits-desktop-main,.btn-sauna-lg-container{
+    display: none;
+}
+
+.massage-therapy-img,.infrared-img-main{ 
+    border-radius: 10px;
+    margin: 6%;
+    width: 100%;
+}
+
+.pricing-btn,.sauna-btn,.contact-btn{
+    font-family: var(--sans-serif);
+    font-size: 1.2rem;
+    margin: 3% auto 1%;
+    transition: .3s;
+    -webkit-appearance: none;
+}
+
+/* Testimonial section on main page */
+
+.testimonial-cell{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+}
+
+#carouselTestimonials .indicator{
+    border-radius: 50%;
+    background-color: rgb(23, 26, 29);
+    width:8px;
+    height: 8px;
+    margin: 0 10px;
+}
+
+#carouselTestimonials .carousel-control-next-icon,#carouselTestimonials .carousel-control-prev-icon{
+    display: none;
+}
+
+.testimonial-header{
+    font-size: 5rem;
+    text-align: center;
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+.testimonial-quote{
+    font-family: var(--handwriting-font);
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+/* Main page contact/footer section */
+.contact{
+    background-color: var(--dark-not-box-bg);
+    color: var(--light-font);
+    font-family: var(--serif-font);
+}
+
+.contact .main-page-font{
+    font-size: 1.2rem;
+}
+
+.green-bay{
+    color: rgb(128, 192, 211);
+    font-size: 1rem;
+}
+
+.phone-number{
+    font-size: 1.1rem;
+    margin-top: 10%;
+}
+
+.massage-table-mobile{
+    margin: 6% 0;
+}
+
+.massage-table-desktop{
+    display: none;
+}
+
+.massage-table{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.social-icon {
+  color: rgb(241, 225, 133);
+  font-size: 1.5rem;
+  padding: 0 20px;
+}
+
+.social-icon:hover{
+    color: rgb(241, 225, 133);
+}
+
+.social-icon-dark {
+  color: var(--dark-box-bg);
+  font-size: 1.5rem;
+  padding: 0 20px;
+  transition: .5s;
+}
+
+.social-icon-dark:hover {
+  color :rgba(255, 208, 0, 0.877);
+}
+
+.to-top{
+    bottom: 15px;
+    color: rgb(77, 94, 107);
+    left: 20px;
+    position: absolute;
+
+}
+
+.website-by{
+    color: rgb(77, 94, 107);
+    font-family: var(--sans-serif);
+    font-size: 11px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.to-top:hover{
+   text-decoration: none;
+}
+
+/* About me & Infrared sauna page */
+
+/* page-heading is used on pricing page also */
+.page-heading{
+    font-family: var(--cursive-font);
+    font-size: 4.5rem;
+    margin: 2% auto;
+}
+
+.headshot, .infrared-page-img-top, .infrared-page-img-bot{
+    border-radius: 10px;
+    /* box-shadow: 2px 2px 15px 1px rgb(19, 17, 6); */
+    margin: 5px auto 10%;
+    width: 90%;
+}  
+
+.infrared-img-desktop{
+    display: none;
+}
+
+.about-me-text-container, .infrared-text-container{
+    font-family: var(--sans-serif);
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.about-me-reach-out{
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+}
+
+.cursive-big-heading{
+    color: var(--cursive-heading);
+    font-size: 2.3rem;
+    font-family: var(--cursive-font);
+}
+
+.cursive-heading{
+     color: var(--cursive-heading);
+    font-size: 2.25rem;
+    font-family: var(--cursive-font);
+}
+
+.infrared-link{
+    font-size: 1rem;
+}
+
+.hr-infrared{
+    border-top: 1px solid rgb(224, 255, 250);
+    width: 70%;
+}
+
+/* Pricing page */
+.pricing-grid{
+    padding: 2%;
+    width: 100%;
+}
+
+.pricing-cell{
+    font-family: var(--sans-serif);
+    padding: 10px;
+}
+
+.pricing-box{
+    background-color: #fff;
+    box-shadow: 0 0 10px 0px rgb(68, 68, 68);
+    border-radius: 5px;
+    color: black;
+    height: 100%;
+    width: auto;
+}
+
+.header-text{
+   font-family: var(--sans-serif);
+   font-size: 1.6rem;
+}
+
+.infrared-box-header .header-text{
+    font-weight: 600;
+}
+
+.box-header{
+   background-color: rgb(52, 58, 64);
+   color: var(--light-font);
+   border-radius: 5px 5px 0 0;
+}
+
+.infrared-box-header{
+   background-color: var(--light-box-bg);
+   color: black;
+   border-radius: 5px 5px 0 0;
+}
+
+.massage-duration{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.save{
+    color: rgb(9, 90, 9);
+}
+
+/* Contact Me page */
+.contact-page-landscape{
+    display: none;
+}
+
+.contact-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--sans-serif);
+}
+
+.contact-me-heading{
+    font-size: 3.5rem;
+    font-family: var(--cursive-font);
+}
+
+.contact-page-text{
+    background-color: #fff;
+    border-radius: 10px;
+    color: var(--dark-box-bg);
+    font-size: 1rem;
+    padding: 10% 4%;
+    margin: var(--section-margin);
+    width: 100%;
+}
+
+.forms-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--dark-box-bg);
+    border-radius: 10px;
+    color: var(--light-font);
+    padding: 10% 6%;
+    margin: var(--section-margin);
+    width: 100%;
+}
+
+.form-group:focus-within{
+transform: scale(1.05, 1.05);
+transition: .3s;
+}
+
+.form-label{
+    margin-top:1rem;
+    margin-bottom:0;
+}
+
+.form-control{
+    margin: 2% auto;
+}
+
+.form-control:valid:focus{
+border-color: green;
+box-shadow: none;
+}
+
+.form-control:invalid:focus{
+border-color: red;
+box-shadow: none;
+}
+
+.contact-footer{
+     background-color: rgb(18, 20, 22);
+    padding-top: 20px;
+    position: absolute;
+    width: 100%;
+}
+
+.contact-align{
+    color: var(--light-font);
+    font-family: var(--cursive-font);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.forms-container label, .php-sent{
+    font-size: 1.3rem;
+}
+
+
+/* footer for infrared, about me, and pricing pages*/
+.pages-footer{
+     background-color: rgb(18, 20, 22);
+     bottom: -80px;
+    height: 80px;
+    padding-top: 20px;
+    position: absolute;
+    width: 100%;
+}
+
+
+@media (max-width:330px){
+/* shrinks recaptcha on Iphone 5 size screens */
+.g-recaptcha {
+transform: scale(0.85);
+-webkit-transform:scale(0.85);
+transform-origin:0 0;
+-webkit-transform-origin:0 0;
+max-width: 240px;
+}
+}
+
+
+@media (min-width:576px){
+/* Infrared sauna image main page */
+.infrared-img-main{
+    margin: 2%;
+    width: 60%;
+}
+
+.brand-logo{
+    height: 180px;
+}
+
+
+/* Infrared page */
+.infrared-page-img-top, .headshot{
+    margin-top: 10px;
+    width: 30%;
+}
+
+.infrared-page-img-bot{
+    width: 100%;
+}
+}
+
+
+
+@media (min-width:768px){
+:root {
+  --section-padding: 3% 1%;
+  --section-margin: 5% 1%;
+}
+
+
+.light-box{
+    box-shadow: 0 0 30px 2px rgb(29, 26, 15);
+    margin: var(--section-margin);
+    padding: var(--section-padding);
+}
+
+.dark-box{
+    box-shadow: 0 0 30px 2px rgb(31, 30, 30);
+    margin: var(--section-margin);
+    padding: var(--section-padding);
+}
+
+.main-page-font{
+    font-size: 1rem;
+   line-height: 1;
+}
+
+.brand-logo{
+    margin: 10px;
+}
+
+/* Makes navbar appear when hamburger button goes away*/
+.navbar{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:2px;
+}
+
+#navbarNavDropdown .nav-item .current-page{
+color: rgb(187, 187, 187);
+}
+
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-item:hover{
+    background-color: transparent;
+    transform: scale(1);
+}
+
+#nav .nav-link{
+    color: var(--light-font);
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    padding: 0 3vw;
+}
+
+.infrared-slide-heading{
+    font-size: 3.3vw;
+}
+
+.slide-caption{
+    font-size: 3vw;
+    line-height: 1.4;
+}
+
+/* Treatment options & Infrared Sauna sections on main page*/
+.massage-therapy-heading{
+    font-size: 4.5rem;
+}
+
+.treatment-label{
+    font-size: 1.2rem;
+    margin: .5rem;
+}
+
+/* Testimonial carousel on main page */
+#carouselTestimonials .carousel-control-next-icon,#carouselTestimonials .carousel-control-prev-icon{
+    display: block;
+   filter: brightness(0);
+   transform: scale(1.2);
+}
+
+.testimonial-cell{
+   padding: 3%;
+}
+
+.testimonial-quote{
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Contact section main page */
+.massage-table-desktop{
+    display: block;
+}
+
+.massage-table-mobile{
+    display: none;
+}
+
+.infrared-page-img-bot{
+    width: 100%;
+}
+
+.infrared-text-container, .about-me-text-container{
+    font-size: .95rem;
+    line-height: 1.35;
+}
+
+/* Infrared page */
+.cursive-big-heading{
+    font-size: 2.75rem;
+}
+
+
+/* About page */
+.headshot{
+    width: 30%;
+}
+
+/* Pricing page */
+.save{
+    color: rgb(3, 53, 3);
+    font-size: 1.05rem;
+}
+
+/* Contact me page */
+.contact-page-text{
+    padding: var(--section-padding);
+    margin: var(--section-margin);
+    width: 80%;
+}
+
+.forms-container{
+    padding: var(--section-padding);
+    margin: var(--section-margin);
+    width: 80%;
+}
+}
+
+
+
+@media (min-width:992px){
+:root {
+  --section-padding: 3%;
+  --section-margin: 5% 2%;
+}
+
+
+.light-box{
+    margin: var(--section-margin);
+}
+
+.dark-box{
+    margin: var(--section-margin);
+}
+
+.main-page-font{
+   font-size: 1.4rem;
+   line-height: 1.1;
+   text-align: justify;
+}
+
+#carouselMain .carousel-control-prev,#carouselMain .carousel-control-next{
+    width: 9%;
+}
+
+#carouselMain .carousel-control-prev-icon,#carouselMain .carousel-control-next-icon{
+    display: block;
+}
+
+/* Treatment options & Infrared Sauna sections on main page*/
+.massage-therapy-heading{
+    font-size: 5.5rem;
+}
+
+.infrared-img-main{
+    margin: 6%;
+    width: 100%;
+}
+
+/* .massage-therapy-img{
+    width: 85%;
+} */
+
+.treatment-label{
+    font-size: 1.6rem;   
+}
+
+.infrared-heading-main{
+    font-size: 3rem;
+}
+
+.infrared-subheading-main{
+    font-size: 1.3rem;
+}
+
+.infrared-benefits-desktop-main{
+   display: block;
+}
+
+.btn-sauna-lg-container{
+    display: block;
+}
+
+.infrared-benefits-mobile-main, .btn-sauna-sm-container{
+    display: none;
+}
+
+/* Infrared page */
+
+.infrared-img-mobile{
+    display: none;
+}
+
+.infrared-img-desktop{
+    display: block;
+}
+
+.cursive-big-heading{
+    font-size: 3.5rem;
+}
+
+.cursive-heading{
+    font-size: 2.75rem;
+}
+
+.infrared-text-container, .about-me-text-container{
+    font-size: 1.2rem;
+}
+
+/* Contact me page */
+.contact-page-text{
+    padding: var(--section-padding);
+    margin: var(--section-margin);
+    width: 65%;
+}
+
+.forms-container{
+    padding: var(--section-padding);
+    margin: var(--section-margin);
+    width: 65%;
+}
+
+}
+
+
+@media (min-width:1200px){
+/* Treatment options & Infrared Sauna sections on main page*/
+
+.treatment-label{
+    font-size: 1.8rem;   
+    letter-spacing: .8px;
+    margin-bottom: 1.5rem;
+}
+
+.infrared-slide-heading{
+    font-size: 3vw;
+}
+
+.infrared-text-container, .about-me-text-container{
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.slide-caption{
+    font-size: 2.2vw;
+    line-height: 1.4;
+}
+
+.headshot{
+    width: 100%;
+}
+}
+
+
+
+/* These media queries only affect carousel on main page and contact page */
+@media (min-aspect-ratio: 6/4) and (min-height: 460px){
+ /* Carousel items */
+.carousel-1-text{
+color: var(--dark-font) !important;
+display: block;
+font-size: 3.4vw;
+font-weight: 500;
+font-family: var(--serif-font);
+letter-spacing: 1.1px;
+position: absolute;
+text-shadow: 0 0 5px #a57817, 0 0 15px #996f35, 0 0 20px #996f35;
+top: 10%;
+white-space: nowrap;
+width: 100%;
+}
+
+
+.fancy-align{
+    font-family: var(--cursive-font);
+    font-size: 4vw;
+    font-weight: 700;
+    position: relative;
+    text-shadow: 0 0 10px #a57817, 0 0 5px #996f35;
+}
+
+.landscape-slide-container{
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    position: relative;
+}
+
+.landscape-slide-img{
+    display: block;
+    min-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.portrait-slide-container, .portrait-slide-img{
+    display: none;
+}
+
+.carousel-indicators li {
+    background-color: rgb(121, 60, 32);
+}
+
+
+.landscape-caption-stones{
+    display: block;
+}
+
+.about-carousel-caption{
+   font-family: var(--serif-font);
+   font-size: 1.7vw;
+   letter-spacing: 1px;
+   line-height: 1.5;
+   width: 85%;
+}
+
+.about-btn{
+    font-family: var(--serif-font);
+    font-size: 1.6vw;
+    margin-top: 5%;
+    -webkit-appearance: none;
+}
+
+
+    /* Only shows "Services" in navbar on landscape screen */
+ .landscape-service-link{
+     display: inline-block;
+}
+
+
+/* contact me page */
+.contact-page-landscape{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    margin: var(--section-margin);
+}
+
+.contact-page-portrait{
+    display: none;
+}
+
+.contact-page-text{
+    background-color: #fff;
+    border-radius: 10px 0 0 10px ;
+    color: var(--dark-box-bg);
+    font-size: 1.2rem;
+    padding: 4%;
+    width: 100%;
+}
+
+.forms-container{
+    background-color: var(--dark-box-bg);
+    border-radius: 0px 10px 10px 0;
+    color: var(--light-font);
+    padding: 4%;
+    width: 100%;
+}
+
+.contact-page .socials{
+    margin-bottom: 0;
+}
+
+}
+
