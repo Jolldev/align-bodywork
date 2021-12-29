@@ -37,7 +37,7 @@ function windowSize() {
 //         $(this).css({ width: '100%' });
 //         $(this).css({ height: maxHeightSlide + 'px' });
 //     });
-    
+
 // };
 
 
@@ -72,7 +72,7 @@ function carouselNormalization() {
             items.each(function () {
                 $(this).css({ height: '0' });
                 $(this).css('min-height', '0'); //reset min-height
-                $(this).css({height: 'auto'});
+                $(this).css({ height: 'auto' });
             });
             carouselNormalization(); //run it again 
         });
