@@ -80,12 +80,10 @@ ul, ol{
 
 /* Hyphens selected long words to allow the use of text-align: justified; */
 .hyphenate{
-    -ms-word-break: break-all;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
+     -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 /* logo top of page*/
