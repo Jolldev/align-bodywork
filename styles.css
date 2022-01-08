@@ -131,6 +131,7 @@ ul, ol{
 
 #navbarNavDropdown .nav-item .current-page{
 color: rgb(105, 105, 105);
+text-align: center;
 }
 
 #nav .nav-link{
