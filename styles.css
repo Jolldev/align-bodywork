@@ -83,9 +83,9 @@ ul, ol{
     word-wrap: break-word;
   overflow-wrap: break-word;
 
-  -webkit-hyphenate-character: '-';
+  -webkit-hyphenate-character: '';
 
--webkit-hyphens: auto;
+/* -webkit-hyphens: auto; */
    -moz-hyphens: auto;
         hyphens: auto;
 }
