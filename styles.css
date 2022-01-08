@@ -83,7 +83,7 @@ ul, ol{
     word-wrap: break-word;
   overflow-wrap: break-word;
 
-  -webkit-hyphenate-character: '';
+  -webkit-hyphenate-character: '-';
 
    -moz-hyphens: auto;
         hyphens: auto;
