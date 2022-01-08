@@ -82,8 +82,10 @@ ul, ol{
 .hyphenate{
     word-wrap: break-word;
   overflow-wrap: break-word;
-  
 
+  -webkit-hyphenate-character: '-';
+
+-webkit-hyphens: auto;
    -moz-hyphens: auto;
         hyphens: auto;
 }
