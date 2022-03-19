@@ -132,3 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", lazyload);
     window.addEventListener("orientationChange", lazyload);
 });
+
+function notice(){
+    alert("To best serve my current clients and not disrupt their treatment plans, I am no longer accepting new clients for evening appointments after 4:00pm. If you are an established client, please message me for my availability and I will get you scheduled. \n\n Weekend appointments are available at a $40 surcharge for all services.");
+}
