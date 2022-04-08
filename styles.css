@@ -253,6 +253,24 @@ width: 100%;
 
 /* Youtube Brand Video */
 
+.auto-resizable-iframe {
+  max-width: 100%;
+  margin: 0px auto;
+}
+
+.auto-resizable-iframe > div {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0px;
+}
+
+.auto-resizable-iframe iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
 
 iframe, object, embed {
     border-radius: 10px;
@@ -718,6 +736,11 @@ color: rgb(187, 187, 187);
     line-height: 1.4;
 }
 
+/* Youtube Branding Video */
+.auto-resizable-iframe {
+    max-width: 70%;
+}
+
 /* Treatment options & Infrared Sauna sections on main page*/
 .massage-therapy-heading{
     font-size: 4.5rem;
@@ -822,6 +845,11 @@ color: rgb(187, 187, 187);
 
 #carouselMain .carousel-control-prev-icon,#carouselMain .carousel-control-next-icon{
     display: block;
+}
+
+/* Youtube Branding Video */
+.auto-resizable-iframe {
+    max-width: 50%;
 }
 
 /* Treatment options & Infrared Sauna sections on main page*/
