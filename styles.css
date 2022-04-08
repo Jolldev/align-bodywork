@@ -260,7 +260,7 @@ width: 100%;
 
 .auto-resizable-iframe > div {
   position: relative;
-  padding-bottom: 75%;
+  padding-bottom: 56.25%;
   height: 0px;
 }
 
