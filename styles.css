@@ -251,6 +251,14 @@ width: 100%;
     width: 75%;
 }
 
+/* Youtube Brand Video */
+
+
+iframe, object, embed {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
 
 /* Treatment options & Infrared Sauna sections on main page*/
 .massage-therapy-text-container{
